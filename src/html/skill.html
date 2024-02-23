@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}传统技艺{% endblock %}
+{% block main %}
+
+<h1>传统技艺</h1>
+
+<ul class="all-skill" style="list-style-type: none;">
+
+  <!-- <li class="skill one">
+    <img src="../static/img/directory_img/traditional_skill_img/xb.jpg" alt="香包">
+    <a href="#">香包</a>
+  </li>
+
+  <li class="skill two">
+    <img src="../static/img/directory_img/traditional_skill_img/jianzhi.png.jpg" alt="剪纸">
+    <a href="#">剪纸</a>
+  </li>
+
+  <li class="skill three">
+    <img src="../static/img/directory_img/traditional_skill_img/liuqinxi.jpg" alt="柳琴戏">
+    <a href="#">柳琴戏</a>
+  </li> -->
+
+</ul>
+
+<script src="{{ url_for('static', filename='js/skill.js') }}"></script>
+{% endblock %}
+
+{% block style %}
+<style>
+/* 替换继承过来的属性，否则溢出无法生效 */
+.body-bg {
+  overflow: auto; /*溢出*/
+}
+
+.all-skill {
+  height: 400px;
+
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  
+  gap: 20px;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skill a {
+  font-size: 36px;
+}
+
+.skill img {
+  width: 300px;
+  height: 300px;
+}
+
+</style>
+{% endblock %}
