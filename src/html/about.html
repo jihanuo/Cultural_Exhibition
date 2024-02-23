@@ -1,0 +1,219 @@
+{% extends 'base.html' %}
+{% block title %}关于我们{% endblock %}
+{% block main %}
+<div class="overlay"></div>
+
+<div class="page-content">
+
+  <div class="about-us">
+    <h1>关于我们</h1>
+    <ul style="list-style-type: none;">
+      <li>
+        <img src="../static/img/about_img/call.svg">
+        <p>联系电话: 18252142795</p>
+      </li>
+      <li>
+        <img src="../static/img/about_img/mail.svg">
+        <p>E-mail: 2792398606@ qq.com</p>
+      </li>
+      <li>
+        <img src="../static/img/about_img/qq.svg">
+        <p>QQ: 2792398606</p>
+      </li>
+      <li>
+        <img src="../static/img/about_img/school.svg">
+        <p>江苏省徐州市徐州工程学院</p>
+      </li>
+    </ul>
+  </div>
+
+  <div class="team-info">
+    <div class="all-members">
+
+      <div class="manage-director">
+
+        <div class="team-head-img">
+          <img src="../static/img/about_img/zhu.png" alt="head-of-this-project">
+        </div>
+        <div class="intro">
+          <h2 id="zhu" style="font-weight: 600;">朱雅致</h2>
+          <p>公司总经理，本项目团队负责人</p>
+        </div>
+
+      </div>
+
+      <div class="members">
+
+        <div class="member">
+          <img src="../static/img/about_img/tong.png" alt="CTO">
+        </div>
+
+        <div class="member">
+          <img src="../static/img/about_img/yu.png" alt="MRS">
+        </div>
+
+        <div class="member">
+          <img src="../static/img/about_img/wang.png" alt="CFO">
+        </div>
+
+        <div class="member">
+          <img src="../static/img/about_img/liu.png" alt="PD">
+        </div>
+
+        <div class="member">
+          <img src="../static/img/about_img/gu.png" alt="CMO">
+        </div>
+
+        <div class="member">
+          <img src="../static/img/about_img/zhang.png" alt="MTS">
+        </div>
+
+        <div class="member">
+          <img src="../static/img/about_img/zhangG.png" alt="ED">
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='js/about.js') }}"></script>
+{% endblock %}
+
+{% block style %}
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+/* 替换继承过来的属性，否则溢出无法生效 */
+.body-bg {
+  overflow: auto; /*溢出*/
+}
+
+/* 最外层页面整体布局 */
+.page-content {
+  display: flex;
+}
+
+/* 左边 联系方式 */
+.about-us {
+  width: 35%;
+  padding-left: 120px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-us h1 {
+  margin-top: -100px;
+  margin-bottom: 60px;
+
+  font-size: 70px;
+  font-style: italic;
+}
+
+.about-us ul li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  padding: 20px;
+  gap: 24px;
+}
+
+.about-us ul li p {
+  font-size: 20px;
+  width: 300px;
+}
+
+.about-us ul li img {
+  width: 40px;
+  height: 40px;
+}
+
+/* 右边 成员信息 */
+.all-members {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 40px;
+}
+
+.manage-director {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-head-img img {
+  width: 160px;
+  height: 160px;
+}
+
+.manage-director .intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.intro #zhu {
+  font-size: 40px;
+}
+
+.members {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap-reverse;
+
+  width: 80%;
+  gap: 25px;
+}
+
+.member img {
+  width: 140px;
+  height: 200px;
+}
+
+/* 打开页面时的加载动画 */
+.overlay {
+  position: absolute;
+  z-index: 999;
+  background: white;
+  width: 100%;
+  height: 100%;
+  animation: reveal 1s ease-in forwards;
+  transform-origin: bottom;
+}
+
+@keyframes reveal{
+  form {
+      transform: scaleY(1);
+  }
+  to {
+      transform: scaleY(0);
+  }
+}
+
+.page-content {
+  animation: growIn 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+  transform: scale(.4);
+}
+
+@keyframes growIn {
+  to {
+      transform: scale(1);
+  }
+}
+</style>
+{% endblock %}
