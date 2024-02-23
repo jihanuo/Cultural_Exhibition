@@ -43,19 +43,17 @@ yaml
 ### 游戏
 使用 gsap?  一个js动画库
 
-### 数据库设计  ()
-使用 sqllite
-flask-sqlalchemy库
+### 数据设计
 
+- 用户
 
-- 用户表
+储存 账号 密码
 
-| username | password |
-|  ----  | ----  |
+- 论坛
+{
 
-- 评论表 
+"theme":{
+user_id : comments
+}
 
-| comment_id | user | theme | comment |
-|------------|  ----  | ----  |---------|
-
-- 
+}

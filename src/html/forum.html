@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}论坛{% endblock %}
+{% block main %}
+<div class="container">
+  <h1 style="font-weight: 600;line-height: 1.2;font-style: oblique;margin-top: 2rem;margin-bottom: 2rem;font-size: calc(2.375rem + 1.5vw)">我与非遗的故事</h1>
+</div>
+<div class="container">
+  <div class="card shadow p-3 mx-auto" style="width: 30rem;">
+      <div class="card-body">
+          <h2 class="card-title">数字媒体活化非遗峨眉武术的传播机制研究</h2>
+          <i class="fa fa-hand-o-right" aria-hidden="true"><a href="#" class="card-link">参与评论</a></i>
+      </div>
+  </div>
+</div>
+{% endblock %}
+  {% block backgroud_image %}  <!--更换网站背景图 --->
+    <style>
+      .body-bg {
+        background-image: url("static/img/bg_forum.png");
+        background-repeat: no-repeat; /*图片不重复*/
+        overflow: hidden; /*溢出隐藏*/
+        background-size: cover; /*背景覆盖窗口*/
+        background-attachment: fixed;
+      }
+    </style>
+  {% endblock %}
