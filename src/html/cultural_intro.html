@@ -1,21 +1,22 @@
 {% extends 'base.html' %}
 {% block title %}传统技艺{% endblock %}
 {% block main %}
+<h1></h1>
 
 <div class="content">
 
   <div class="img">
-    <h1>香包</h1>
-    <img src="../static/img/directory_img/traditional_skill_img/xb.jpg" alt="">
-    <img src="../static/img/directory_img/traditional_skill_img/xb.jpg" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
   </div>
 
   <div class="text">
-    <p>香包（徐州香包），江苏省徐州市传统美术，国家级非物质文化遗产之一。徐州香包的历史至少可以上溯到战国时期。汉乐府长诗《孔雀东南飞》中有“红罗覆斗帐，四角垂香囊”徐州是两汉文化的发祥地。徐州香包合实用性与观赏性为一，它造型纯朴，图案精美，色彩艳丽，绣法工整细致，内装的中草药能驱蚊防潮，净化空气，预防疾病。徐州香包形制丰富，有心形、圆形、菱形、元宝形、蝴蝶形、花瓶形、水滴形、长方形、人物娃娃等各种形状。外部图案多采用龙凤呈祥、鸳鸯戏水、松鹤延年、喜鹊闹梅等传统的喜庆吉祥题材，以寄托人们祈求祥瑞、辟邪纳福、丰衣足食的美好愿望。2008年6月7日，香包（徐州香包）经中华人民共和国国务院批准列入第二批国家级非物质文化遗产名录，项目编号Ⅶ-26</p>
+    <p></p>
   </div>
 
 </div>
 
+<script src="{{ url_for('static', filename='js/cultural_intro.js') }}"></script>
 {% endblock %}
 
 {% block style %}
@@ -23,6 +24,14 @@
 /* 替换继承过来的属性，否则溢出无法生效 */
 .body-bg {
   overflow: auto; /*溢出*/
+}
+
+h1 {
+  font-style: italic;
+  font-family: '华文行楷', '宋体', cursive;
+  font-size: 48px;
+
+  margin-left: 180px;
 }
 
 .content {
@@ -48,13 +57,19 @@
 .text {
   width: 60%;
   height: 100%;
+  
+  border: 2px solid rgba(94, 77, 71, 0.6);
+  border-radius: 50px;
+  background-color: rgba(236, 190, 161, 0.8);
+  opacity: 0.8;
+}
+
+.text p {
   font-weight: bold;
   font-size: 24px;
-
-  border: 1px solid antiquewhite;
-  border-radius: 10px;
-  background-color: antiquewhite;
-  opacity: 0.5;
+  text-align: left;
+  
+  padding: 24px 16px;
 }
 
 </style>

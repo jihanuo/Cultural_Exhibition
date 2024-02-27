@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% block title %}资讯{% endblock %}
+{% block main %}
+
+<div class="title-text-video">
+
+  <div class="two-kinds-titles">
+
+    <ul class="titles"></ul>
+    <ul class="customize-titles"></ul>
+
+  </div>
+
+
+  <div class="text">
+    <p>这是一篇文章的内容...</p>
+  </div>
+
+  <div class="video">
+    <h1>视频剪影</h1>
+    <ul class="video-list"></ul>
+
+    <!-- 视频播放 -->
+    <video id="videoPlayer" controls style="display: none;">
+      <source src="" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+
+</div>
+
+<script src="{{ url_for('static', filename='js/news.js') }}"></script>
+{% endblock %}
+
+{% block style %}
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+/* 替换继承过来的属性，否则溢出无法生效 */
+.body-bg {
+  overflow: auto; /*溢出*/
+}
+
+.title-text-video {
+  display: flex;
+
+  margin: 50px 80px 0 50px;
+  gap: 120px;
+}
+
+.two-kinds-titles {
+  background-color: rgba(255, 235, 215, 0.6);
+  border-radius: 10px;
+
+  padding: 0;
+  width: 400px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.titles + .customize-titles {
+  border-top: 2px solid black; /* 设置横线样式 */
+  margin-top: 10px; /* 可选：设置横线与上方列表的间距 */
+  border-top-color: rgba(238, 79, 79, 0.2);
+}
+
+.titles {
+  padding: 0;
+}
+
+.titles p {
+  font-family: '华文行楷', '宋体', cursive;
+  font-size: 24px;
+  text-align: left;
+  color: #333333;
+
+  margin: 40px;
+}
+.customize-titles {
+  padding: 0;
+}
+
+.customize-titles p {
+  font-family: '华文行楷', '宋体', cursive;
+  font-size: 24px;
+  text-align: left;
+  color: #333333;
+
+  margin: 40px;
+}
+
+.text {
+  background-color: rgba(255, 235, 215, 0.6);
+  border-radius: 10px;
+
+  width: 700px;
+}
+
+.text p {
+  font-family: '华文行楷', '宋体', cursive;
+  font-size: 24px;
+  /* color: rgb(255, 106, 106); */
+  color: #333333;
+
+  text-align: center;
+  padding: 20px;
+}
+
+.video {
+  width: 360px;
+
+  background-color: rgba(255, 218, 185, 0.6);
+  border-radius: 10px;
+
+  padding: 20px;
+}
+
+.video h1 {
+  font-family: '华文行楷', '宋体', cursive;
+  /* color: rgb(215, 223, 230); */
+}
+
+.video-list p {
+  font-family: '华文行楷', '宋体', cursive;
+  font-size: 20px;
+}
+
+#videoPlayer {
+  width: 320px;
+  height: 200px;
+}
+
+</style>
+{% endblock %}

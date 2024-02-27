@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %}非遗美食{% endblock %}
+{% block main %}
+
+<h1>非遗美食</h1>
+
+<ul class="all-food" style="list-style-type: none;"></ul>
+
+<script src="{{ url_for('static', filename='js/food.js') }}"></script>
+{% endblock %}
+
+{% block style %}
+<style>
+/* 替换继承过来的属性，否则溢出无法生效 */
+.body-bg {
+  overflow: auto; /*溢出*/
+}
+
+h1 {
+  font-style: italic;
+  font-family: '华文行楷', '宋体', cursive;
+  font-size: 48px;
+  margin: 20px 0 60px 80px;
+}
+
+.all-food {
+  height: 400px;
+
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  
+  gap: 20px;
+}
+
+.food {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.food a {
+  font-size: 36px;
+}
+
+.food img {
+  width: 300px;
+  height: 300px;
+}
+
+</style>
+{% endblock %}
