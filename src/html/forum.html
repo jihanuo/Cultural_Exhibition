@@ -4,14 +4,30 @@
 <div class="container">
   <h1 style="font-weight: 600;line-height: 1.2;font-style: oblique;margin-top: 2rem;margin-bottom: 2rem;font-size: calc(2.375rem + 1.5vw)">我与非遗的故事</h1>
 </div>
-<div class="container">
-  <div class="card shadow p-3 mx-auto" style="width: 30rem;">
+<div class="d-flex flex-row">
+    <div class="container">
+    {% for theme in themes %}
+  <div class="card shadow p-3 mx-auto mb-3" style="width: 30rem;">
       <div class="card-body">
-          <h2 class="card-title">数字媒体活化非遗峨眉武术的传播机制研究</h2>
-          <i class="fa fa-hand-o-right" aria-hidden="true"><a href="#" class="card-link">参与评论</a></i>
+          <h2 class="card-title">{{ theme }}</h2>
+          <i class="fa fa-hand-o-right" aria-hidden="true"><a href="/forum/comments/{{ theme }}" class="card-link">参与评论</a></i>
+          <h6 class="card-subtitle mb-2 text-muted">{{ themes_num[theme] }}条评论</h6>
       </div>
   </div>
+    {% endfor %}
+    </div>
+    <div class="container">
+          <div class="card shadow p-3 mx-auto mb-3" style="width: 30rem;">
+      <div class="card-body">
+          <h1>overseas video</h1>
+                {% for video_name,video in videos.items() %}
+          <h2 class="card-title"><a href="{{ video }}">{{ video_name }}</a></h2>
+                {% endfor %}
+      </div>
+          </div>
+    </div>
 </div>
+
 {% endblock %}
   {% block backgroud_image %}  <!--更换网站背景图 --->
     <style>

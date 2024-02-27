@@ -1,5 +1,5 @@
+import settings
 from flask import Flask, render_template, request, redirect
-
 from views.auth import auth_blue
 from views.index import index_blue
 from views.admin import admin_blue,dropzone

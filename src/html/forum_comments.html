@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block title %}论坛{% endblock %}
+{% block main %}
+<div class="container" xmlns="http://www.w3.org/1999/html">
+  <h1 style="font-weight: 600;line-height: 1.2;font-style: oblique;margin-top: 2rem;margin-bottom: 2rem;font-size: calc(2.375rem + 1.5vw)">{{ theme }}</h1>
+</div>
+<div class="container">
+  <p>{{ theme_content }}</p>
+</div>
+<div class="container">
+      {% for id,comment in comments.items() %}
+  <div class="card shadow p-3 mx-auto mb-3" style="width: 30rem;">
+      <div class="card-body">
+          <p class="card-text middle" align="left">{{ comment.content }}</p>
+          <p class="card-text right" align="right">--来自用户{{ comment.user_id }}</p>
+          {% if username == comment.user_id %}
+          <form action="/forum/comments/delete" method="post">
+              <input type="hidden" name="theme" value="{{ theme }}">
+              <input type="hidden" name="comment_id" value="{{ id }}">
+              <button class="btn btn-primary pull-right" type="submit" > 删除</button>
+          </form>
+          {% endif %}
+      </div>
+  </div>
+    {% endfor %}
+    {% if status==1 %}
+<div class="container mb-5" style="width: 40rem;">
+    <form action="/forum/comments/issue" method="post">
+                <div class="mb-3">
+        <h2 class="form-label">参与评论</h2>
+                    <input type="hidden" name="theme" value="{{ theme }}">
+                    <textarea class="form-control" id="comment" name="comment"></textarea>
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary  pull-right" type="submit">发表</button>
+        </div>
+    </form>
+</div>
+</div>
+{% else %}
+<h2 style="color: #e1b3ac">请登录后发表评论</h2>
+{% endif %}
+{% endblock %}
+  {% block backgroud_image %}  <!--更换网站背景图 --->
+    <style>
+      .body-bg {
+        background-image: url("{{ url_for('static', filename='img/bg_forum.png') }}");
+        background-repeat: no-repeat; /*图片不重复*/
+        overflow: hidden; /*溢出隐藏*/
+        background-size: cover; /*背景覆盖窗口*/
+        background-attachment: fixed;
+      }
+    </style>
+  {% endblock %}

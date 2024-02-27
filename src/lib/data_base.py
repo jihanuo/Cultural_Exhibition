@@ -12,14 +12,14 @@ def read_filedata(filename):
     filepath = os.path.join(DATA_FOLDER, filename)
     if not os.path.exists(filepath):
         return {}
-    with open(filepath, "r") as f:
+    with open(filepath, "r", encoding='utf-8') as f:
         x = f.read()
     return eval(x)
 
 
 def save_filedata(filename, data):
     filepath = os.path.join(DATA_FOLDER, filename)
-    with open(filepath, "w") as f:
+    with open(filepath, "w", encoding='utf-8') as f:
         f.write(str(data))
 
 
@@ -50,7 +50,6 @@ def is_filedata(filename, key, value):
 
 
 def get_keys(filename):
-    json_string = read_filedata(filename)
-    json_dict = json.loads(json_string)
-    key_list = list(json_dict.keys())
+    data = read_filedata(filename)
+    key_list = list(data.keys())
     return key_list

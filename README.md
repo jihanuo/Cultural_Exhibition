@@ -4,9 +4,6 @@
 
 ## 使用依赖
 flask
-flask-login
-flask-sqlalchemy
-flask-dropzone
 
 ## 后台管理页面需导入的数据
 1、首页轮播图 

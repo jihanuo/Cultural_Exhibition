@@ -13,7 +13,7 @@
 <nav class=" navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-      <img src="static/img/logo.png" alt="Logo" width="100" height="50" class="d-inline-block align-text-top">
+      <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo" width="100" height="50" class="d-inline-block align-text-top">
     </a>
     <a class="navbar-brand" href="/">心淮未来</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -271,6 +271,10 @@
     background-color: #e1e1e19c;
     border: 6px solid #68c3d49e;
 }
+.body-bg {
+  overflow: auto;
+}
+
 </style>
   {% endblock %}
   {% block others %}
