@@ -6,12 +6,12 @@
 
   <div class="traditional music">
     <img src="../static/img/directory_img/music.png" alt="传统音乐">
-    <a href="#">传统音乐</a>
+    <a href="/music">传统音乐</a>
   </div>
   
   <div class="traditional cuisine">
     <img src="../static/img/directory_img/food.png" alt="非遗美食">
-    <a href="#">非遗美食</a>
+    <a href="/food">非遗美食</a>
   </div>
   
   <div class="traditional skill">
@@ -21,17 +21,17 @@
   
   <div class="traditional dance">
     <img src="../static/img/directory_img/dance.png" alt="传统舞蹈">
-    <a href="#">传统舞蹈</a>
+    <a href="/dance">传统舞蹈</a>
   </div>
   
   <div class="traditional tale">
     <img src="../static/img/directory_img/tale.png" alt="民间典故">
-    <a href="#">民间典故</a>
+    <a href="/tale">民间典故</a>
   </div>
 
 </div>
 
-<script src="{{ url_for('static', filename='js/directory.js') }}"></script>
+<script src="{{ url_for('static', filename='js/catalog.js') }}"></script>
 {% endblock %}
 
 {% block style %}
@@ -59,9 +59,8 @@
 }
 
 .traditional {
-  border: 1px solid red;
   border-radius: 10px;
-  background-color: antiquewhite;
+  background-color: rgba(250, 235, 215, 0.6);
   width: 180px;
   height: 320px;
 

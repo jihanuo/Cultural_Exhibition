@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}民间典故{% endblock %}
+{% block main %}
+<h1>民间典故</h1>
+
+<ul class="all-tale" style="list-style-type: none;"></ul>
+
+<script src="{{ url_for('static', filename='js/tale.js') }}"></script>
+{% endblock %}
+
+{% block style %}
+<style>
+/* 替换继承过来的属性，否则溢出无法生效 */
+.body-bg {
+  overflow: auto; /*溢出*/
+}
+
+h1 {
+  font-style: italic;
+  font-family: '华文行楷', '宋体', cursive;
+  font-size: 48px;
+  margin: 20px 0 60px 80px;
+}
+
+.all-tale {
+  height: 400px;
+
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  
+  gap: 20px;
+}
+
+.tale {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tale a {
+  font-size: 36px;
+}
+
+.tale img {
+  width: 300px;
+  height: 300px;
+}
+</style>
+{% endblock %}
