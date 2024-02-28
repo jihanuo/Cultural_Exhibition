@@ -32,7 +32,8 @@ def del_filedata(filename, key):
 def set_filedata(filename, key, value):
     data = read_filedata(filename)
     data[key] = value
-    save_filedata(filename, data)
+    json_data = json.dumps(data, indent=2, sort_keys=True, ensure_ascii=False)
+    save_filedata(filename, json_data)
 
 
 def get_filedata(filename, key, alt_value=None):

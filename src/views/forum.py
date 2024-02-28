@@ -48,7 +48,7 @@ def issue():
         }
     comments[comment_id] =add_comment
     set_theme_info(theme, "评论", comments)
-    return redirect("/forum/comments/{}".format(theme))
+    return redirect("https://xhwlfy.cn/forum/comments/{}".format(theme))
 
 @forum_blue.route("/comments/delete",methods=["POST","GET"])
 def delete():
@@ -58,4 +58,4 @@ def delete():
     comment_id = request.form["comment_id"]
     del comments[comment_id]
     set_theme_info(theme, "评论", comments)
-    return redirect("/forum/comments/{}".format(theme))
+    return redirect("https://xhwlfy.cn/forum/comments/{}".format(theme))

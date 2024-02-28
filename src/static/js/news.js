@@ -23,57 +23,14 @@ function findVideoPath(videoTitle) {
 }
 
 // 资讯数据。文章标题 / 文章内容 / 视频标题 / 视频
-const addedData = 
-`{
-  "articles": [
-    {
-      "title": "习言道 | 习近平的“非遗”足迹",
-      "content": "123"
-    },
-    {
-      "title": "习近平总书记的非遗情结",
-      "content": "456"
-    },
-    {
-      "title": "习言道 | 让历史文脉更好地传承下去",
-      "content": "789"
-    },
-    {
-      "title": "文章标题4",
-      "content": "4321"
-    }
-  ],
-  "customs": [
-    {
-      "title": "文章标题1",
-      "content": "abc"
-    },
-    {
-      "title": "文章标题2",
-      "content": "def"
-    },
-    {
-      "title": "文章标题3",
-      "content": "ghi"
-    }
-  ],
-  "videos": [
-    {
-      "title": "videoTitle1",
-      "videoName": "mov_bbb.mp4"
-    },
-    {
-      "title": "videoTitle2",
-      "videoName": "fanshu.mp4"
-    },
-    {
-      "title": "videoTitle3",
-      "videoName": "basketball.mp4"
-    }
-  ]
-}`;
+var dataAdded = $.ajax({url:"https://xhwlfy.cn/news/json",async:false});
+const data1 = JSON.stringify(dataAdded.responseText);
+console.log(data1)
+var data2 = JSON.parse(data1)
+var data = JSON.parse(data2)
+console.log(data)
 // 所有资讯数据
-const articleData = JSON.parse(addedData);
+const articleData = data;
 
 // 文章标题列表 - 习言
 for (let i = 0; i < articleData.articles.length; i++) {
