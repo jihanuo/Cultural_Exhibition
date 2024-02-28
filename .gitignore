@@ -1,6 +1,5 @@
 # 项目本身的ignore
 cache/
-data/
 log/
 src/html/md_content
 src/static/avatars/

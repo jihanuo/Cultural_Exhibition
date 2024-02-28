@@ -1,0 +1,48 @@
+{
+  "articles": [
+    {
+      "title": "习言道 | 习近平的“非遗”足迹",
+      "content": "123"
+    },
+    {
+      "title": "习近平总书记的非遗情结",
+      "content": "456"
+    },
+    {
+      "title": "习言道 | 让历史文脉更好地传承下去",
+      "content": "789"
+    },
+    {
+      "title": "文章标题4",
+      "content": "4321"
+    }
+  ],
+  "customs": [
+    {
+      "title": "文章标题1",
+      "content": "abc"
+    },
+    {
+      "title": "文章标题2",
+      "content": "def"
+    },
+    {
+      "title": "文章标题3",
+      "content": "ghi"
+    }
+  ],
+  "videos": [
+    {
+      "title": "videoTitle1",
+      "videoName": "mov_bbb.mp4"
+    },
+    {
+      "title": "videoTitle2",
+      "videoName": "fanshu.mp4"
+    },
+    {
+      "title": "videoTitle3",
+      "videoName": "basketball.mp4"
+    }
+  ]
+}
