@@ -1,12 +1,9 @@
 {% extends 'base.html' %}
 {% block more_staticfiles%}
-    {{ dropzone.load_css() }}
-    {{ dropzone.style('border: 2px dashed #0087F7; margin: 10%') }}
-    {{ dropzone.load_js() }}
 {%endblock%}
-{% block title %}心淮未来首页{% endblock %}
+{% block title %}视频{% endblock %}
 {% block main %}
-{{ dropzone.create(action='/uploads') }}
+
 {% endblock %}
   {% block backgroud_image %}  <!--更换网站背景图 --->
     <style>
