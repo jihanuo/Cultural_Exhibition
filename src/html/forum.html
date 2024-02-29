@@ -21,7 +21,8 @@
       <div class="card-body">
           <h1>overseas video</h1>
                 {% for video_name,video in videos.items() %}
-          <h2 class="card-title"><a href="{{ video }}">{{ video_name }}</a></h2>
+          <h2 class="card-title">{{ video_name }}</h2>
+          <i class="fa fa-hand-o-right" aria-hidden="true"><a href="/forum/video/{{ video_name }}" class="card-link">观看视频</a></i>
                 {% endfor %}
       </div>
           </div>

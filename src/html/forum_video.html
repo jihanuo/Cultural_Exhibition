@@ -3,12 +3,16 @@
 {%endblock%}
 {% block title %}视频{% endblock %}
 {% block main %}
-
+<div class="container">
+<h1>{{ video_name }}</h1>
+<p>{{ video_intro }}</p>
+<video src="https://xhwlfy.cn/{{ video }}" controls width="640" height="360" autoplay></video>
+</div>
 {% endblock %}
   {% block backgroud_image %}  <!--更换网站背景图 --->
     <style>
       .body-bg {
-        background-image: url("static/img/bg_index.png");
+        background-image: url("https://xhwlfy.cn/static/img/bg_index.png");
         background-repeat: no-repeat; /*图片不重复*/
         overflow: hidden; /*溢出隐藏*/
         background-size: cover; /*背景覆盖窗口*/

@@ -3,7 +3,7 @@ import os
 import json
 from flask import Blueprint, request, render_template, redirect, url_for
 from src.lib.auth import get_auth_status
-from src.lib.forum import get_forum_themes,get_theme_info,set_theme_info
+from src.lib.forum import get_forum_themes,get_theme_info,set_theme_info,get_video_intro
 
 forum_blue = Blueprint("forum", __name__, url_prefix="/forum")
 
@@ -59,3 +59,16 @@ def delete():
     del comments[comment_id]
     set_theme_info(theme, "评论", comments)
     return redirect("https://xhwlfy.cn/forum/comments/{}".format(theme))
+
+@forum_blue.route("/video/<video_name>", methods=["POST","GET"])
+def forum_video(video_name):
+    content = get_auth_status(request.cookies)
+    video_intro = get_video_intro(video_name, "内容")
+    path =  os.path.join("static/forum_video")# 文件夹目录
+    files = os.listdir(path)
+    videos={}
+    for file in files:
+        video_name = (file.split(".")[0]).split("/")[-1]
+        videos[video_name] = os.path.join("static/forum_video",file)
+    video = videos[video_name]
+    return render_template("forum_video.html", **content,video=video,video_intro=video_intro,video_name=video_name)
