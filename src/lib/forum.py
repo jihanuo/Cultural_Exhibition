@@ -17,3 +17,7 @@ def  set_theme_info(theme,key,value):
     info = get_filedata(COMMENTS_FILENAME,theme, {})
     info[key] = value
     set_filedata(COMMENTS_FILENAME, theme, info)
+
+def  get_video_intro(theme,key):
+    info = get_filedata("forum_video", theme, {})
+    return info.get(key)
