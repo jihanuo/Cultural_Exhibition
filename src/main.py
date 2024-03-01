@@ -7,7 +7,7 @@ from views.catalog import catalog_blue , skill_blue, music_blue, food_blue, danc
 from views.cultural_intro import cultural_intro_blue
 from views.news import news_blue
 from views.forum import forum_blue
-
+from views.store import store_blue
 app = Flask(__name__, static_folder="static", static_url_path="/static", template_folder="html")
 app.secret_key = 'bello'
 app.register_blueprint(index_blue)
@@ -22,3 +22,4 @@ app.register_blueprint(cultural_intro_blue)
 app.register_blueprint(news_blue)
 app.register_blueprint(auth_blue)
 app.register_blueprint(forum_blue)
+app.register_blueprint(store_blue)
