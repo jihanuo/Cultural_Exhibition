@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block more_staticfiles%}
+{%endblock%}
+{% block title %}商店{% endblock %}
+{% block main %}
+  <h1 class="h1-with-bg">非物质文化遗产购物平台</h1>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="list-group" id="list-tab" role="tablist">
+        {% for good in goods %}
+        <a class="list-group-item list-group-item-action" id="list-{{ good }}-list" data-bs-toggle="list" href="#{{ good }}" role="tab" aria-controls="list-{{ good }}"><h3>{{ good }}</h3></a>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="tab-content" id="nav-tabContent">
+        {% for good in goods %}
+        <div class="tab-pane fade" id="{{ good }}" role="tabpanel" aria-labelledby="list-{{ good }}-list">
+          <h4 class="mb-3">商品介绍</h4>
+          <h6 class="mb-3">{{ goods_intro[good] }}</h6>
+          <img src="https://xhwlfy.cn/{{ goods_img[good] }}" alt="{{ good }}" class=".img-fluid">
+          <h4 class="mb-3">传承人介绍</h4>
+          <h6 class="mb-3">{{ goods_person_intro[good]}}</h6>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col">
+      <img src="{{ url_for('static', filename='img/store.jpg') }}"  height="600" width="300">
+    </div>
+  </div>
+<h3>如需选购 请联系我们</h3>
+</div>
+{% endblock %}
+  {% block backgroud_image %}  <!--更换网站背景图 --->
+    <style>
+      .body-bg {
+        background-color:white;
+        background-repeat: no-repeat; /*图片不重复*/
+        overflow: hidden; /*溢出隐藏*/
+        background-size: cover; /*背景覆盖窗口*/
+        background-attachment: fixed;
+      }
+    </style>
+  {% endblock %}
+  {% block others %}
+  <style>
+   .list-group-item.active {
+    color: #e1b3ac;
+    background-color: #9a3e30;
+    border-color: #9a3e30;
+}   
+.list-group-item {
+    background-color: #b65546;
+    border: 1px solid rgba(0, 0, 0, .125);
+    color: #623831;
+}
+.list-group-item:hover,
+.list-group-item:focus {
+    color: #e1b3ac !important;
+    background-color: #781304 !important;
+}
+.h1-with-bg {
+      background-image: url('static/img/store_up.jpg');
+      background-size: contain; /* 让背景图完整显示在H1中 */
+      background-repeat:repeat;
+      color: black; /* 设置文字颜色，以便与背景图对比 */
+      text-align: center; /* 文字居中显示 */
+      padding: 50px; /* 可根据需要调整 */
+    }
+  </style>
+  {% endblock %}
