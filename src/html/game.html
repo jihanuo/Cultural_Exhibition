@@ -1,89 +1,1751 @@
 {% extends 'base.html' %}
-{% block title %}名录{% endblock %}
+{% block title %}游戏{% endblock %}
 {% block main %}
 
-<div class="catalog">
+<div id="scene-building" class="first" style="display: block;">
 
-  <div class="traditional music">
-    <img src="../static/img/directory_img/music.png" alt="传统音乐">
-    <a href="#">传统音乐</a>
+  <div id="xiangbao" class="item">
+    <p id="stuff-name">徐州香包</p>
+    <img id="building" src="../static/img/game_img/徐州民俗博物馆.png">
+    <p id="building-name">徐州民俗博物馆</p>
   </div>
-  
-  <div class="traditional cuisine">
-    <img src="../static/img/directory_img/food.png" alt="非遗美食">
-    <a href="#">非遗美食</a>
+
+  <div id="jianzhi" class="item">
+    <p id="stuff-name">徐州剪纸</p>
+    <img id="building" src="../static/img/game_img/邳州民间剪纸.png">
+    <p id="building-name">邳州民间剪纸</p>
   </div>
-  
-  <div class="traditional skill">
-    <img src="../static/img/directory_img/skill.png" alt="传统技艺">
-    <a href="/skill">传统技艺</a>
-  </div>
-  
-  <div class="traditional dance">
-    <img src="../static/img/directory_img/dance.png" alt="传统舞蹈">
-    <a href="#">传统舞蹈</a>
-  </div>
-  
-  <div class="traditional tale">
-    <img src="../static/img/directory_img/tale.png" alt="民间典故">
-    <a href="#">民间典故</a>
+
+  <div id="liuqinxi" class="item">
+    <p id="stuff-name">柳琴戏</p>
+    <img id="building" src="../static/img/game_img/云龙山庙会.png">
+    <p id="building-name">云龙山庙会</p>
   </div>
 
 </div>
 
-<script src="{{ url_for('static', filename='js/directory.js') }}"></script>
+
+<div id="scene-mountain" class="second" style="display: none;">
+
+  <div id="xiangbao-intro">
+    <p>
+      香包又叫容臭、香袋、香囊、香缨、佩帏，今人称荷包、耍货子、绌绌。它是古代中国劳动妇女创造的一种民间刺绣工艺品。是以男耕女织为标志的古代中国农耕文化的产物，是传承千年而余绪未泯的中国传统文化的遗存和再生。香包最早称容臭，屈原《离骚》中有“扈江篱与辟芷兮，纫秋兰以为佩”，当时的香料是辟芷、秋兰。在明朝仍有容臭的称呼。中国传统的香囊多用绸布制成，内装雄黄、熏草、艾叶等香料。一说香包可以避邪，端午节时多会配挂香包。2008年入选第一批国家级非物质文化遗产扩展项目名录。
+    </p>
+  </div>
+
+  <div id="girl">
+    <div id="girl-word">
+      <p>终于向妈妈学会了制作香包，我要送给他！</p>
+    </div>
+    <div class="cute-girl">
+      <!-- <img src="../static/img/game_img/cute_girl.jpg"> -->
+      <img src="../static/img/game_img/girl.png">
+    </div>
+  </div>
+
+</div>
+
+
+<div id="scene-mountain" class="third" style="display: none;">
+
+  <div id="scholar-boy">
+    <div id="scholar-boy-word">
+      <p>
+        功成名就归来，她还记得我吗？端午节将至，我想送给她一个礼物…
+      </p>
+    </div>
+    <!-- <img src="../static/img/game_img/scholar-boy.png"> -->
+    <div class="handsome-boy">
+      <img src="../static/img/game_img/handsome_boy (2).jpg">
+    </div>
+  </div>
+
+</div>
+
+
+<div id="scene-mountain" class="fourth" style="display: none;">
+
+  <div id="old-man">
+    <div id="old-man-word">
+      <p>小姑娘，好精美的香包啊，是你自己缝纫的嘛？</p>
+    </div>
+    <img src="../static/img/game_img/old_man.png">
+  </div>
+
+  <div id="girl">
+    <div id="girl-word">
+      <p>啊，您是屈原！对的，我跟妈妈学的，我想把它送给我的心上人…</p>
+    </div>
+    <div class="cute-girl">
+      <img src="../static/img/game_img/girl.png">
+    </div>
+  </div>
+
+</div>
+
+
+<!-- 问答场景 -->
+<div id="scene-mountain" class="fifth" style="display: none;">
+
+  <div id="title">
+    <p>历史知识问答</p>
+  </div>
+
+  <div id="q-and-a">
+    <div id="q">
+      <p>屈原当时侍奉的群主是以下哪一位？</p>
+    </div>
+
+    <div id="a">
+      <div id="option"><p>A、楚哀王</p></div>
+      <div id="option" class="correct"><p>B、楚怀王</p></div>
+      <div id="option"><p>C、楚幽王</p></div>
+    </div>
+  </div>
+
+</div>
+
+
+<div id="scene-mountain" class="sixth" style="display: none;">
+
+  <div id="story">
+    <p>
+      <span class="story-title">屈原与香包的故事： </span>
+      <span class="story-content">屈原在楚国担任三闾大夫一职时，主张对内改革、对外联齐抗秦，但这一主张触犯了贵族利益，遭到诋毁。 而楚怀王听信谗言，渐渐疏远屈原。 后来，秦国攻打楚国，屈原写信给楚王，劝他与齐国联合抗秦，但遭到小人诋毁，楚怀王不再相信屈原。屈原于是郁郁寡欢，并为国家的黑暗而感到痛心，于是投汨罗江自尽。百姓听闻屈原投江后纷纷失声痛哭，无不为其感到惋惜，并自发来到汨罗江边哭诉，为其哀悼。不仅如此，百姓还将各自的物品投入江中来悼念屈原。</span>
+    </p>
+  </div>
+
+  <div id="old-man">
+    <div id="old-man-word">
+      <p>哈哈，香包可以驱邪避瘟、祈福安神，代表着吉祥和祝福，还可以作为护身符，驱走邪恶，留存正气！小姑娘真的是用心了！</p>
+    </div>
+    <img src="../static/img/game_img/old_man.png">
+  </div>
+
+  <div id="girl">
+    <div id="girl-word">
+      <p>多谢您告诉我这些！我们要和您一样，做个一身正气的人!</p>
+    </div>
+    <div class="cute-girl">
+      <img src="../static/img/game_img/girl.png">
+    </div>
+  </div>
+
+</div>
+
+
+<!-- 问答场景 -->
+<div id="scene-mountain" class="seventh" style="display: none;">
+
+  <div id="title">
+    <p>历史知识问答</p>
+  </div>
+
+  <div id="q-and-a">
+    <div id="q">
+      <p>人们用以下哪些东西来纪念屈原？</p>
+    </div>
+
+    <div id="a">
+      <div id="option"><p>A、雄黄酒 菊花</p></div>
+      <div id="option" class="correct"><p>B、粽子 香包</p></div>
+      <div id="option"><p>C、月饼 桂花</p></div>
+    </div>
+  </div>
+
+</div>
+
+
+<div id="scene-mountain" class="eighth" style="display: none;">
+
+  <div id="xiangbao-image"></div>
+
+  <div id="xiangbao-intro">
+    <p>
+      香包的设计和图案多种多样，其中不乏寓意吉祥的元素。如牡丹花，象征着富贵荣华；葫芦，象征着福禄寿喜；鱼，象征着年年有余。人们通过佩戴香包，将吉祥的寓意融入日常生活中，寄托着对美好未来的向往。香包常被作为礼物赠予亲朋好友，表达祝福之意。在新婚之夜，婆婆会赠送一个绣有葫芦和石榴图案的香包给新婚夫妇，寓意着祝福他们早生贵子、多子多福。在孩子生日时，家长会给孩子绣一个香包，寓意着祝福他们健康成长、平安快乐……
+    </p>
+  </div>
+
+</div>
+
+
+<div id="scene-mountain" class="ninth" style="display: none;">
+
+  <div id="old-man">
+    <img src="../static/img/game_img/old_man.png">
+  </div>
+
+  <div id="scholar-boy">
+    <div id="scholar-boy-word">
+      <p>小彤，许久不见，我有个礼物要送给你…</p>
+    </div>
+    <div class="handsome-boy">
+      <img src="../static/img/game_img/handsome_boy (2).jpg">
+    </div>
+  </div>
+
+  <div id="girl">
+    <div id="girl-word">
+      <p>我，我也是..</p>
+    </div>
+    <div class="cute-girl">
+      <img src="../static/img/game_img/girl.png">
+    </div>
+  </div>
+
+</div>
+
+
+<div id="scene-mountain" class="tenth">
+
+  <div id="old-man">
+    <div id="old-man-word">
+      <p>哈哈，“扈江篱与辟芷兮，纫秋兰以为佩……”</p>
+    </div>
+    <img src="../static/img/game_img/old_man.png">
+  </div>
+
+  <div id="scholar-boy">
+    <div class="handsome-boy">
+      <img src="../static/img/game_img/handsome_boy (2).jpg">
+    </div>
+  </div>
+
+  <div id="girl">
+    <div class="cute-girl">
+      <img src="../static/img/game_img/girl.png">
+    </div>
+  </div>
+
+</div>
+
+
+<!-- 问答场景 -->
+<div id="scene-mountain" class="eleventh" style="display: none;">
+
+  <div id="title">
+    <img src="../static/img/game_img/xiangbao_big.png" alt="">
+  </div>
+
+  <div id="q-and-a">
+    <div id="q">
+      <p>香包中的香料有哪些？</p>
+    </div>
+
+    <div id="a">
+      <div id="option" class="correct"><p>A 佩兰、川芎、香附</p></div>
+      <div id="option"><p>B 肉桂、丁香、柠檬</p></div>
+      <div id="option"><p>C 香茅草、千里香、香菜籽</p></div>
+    </div>
+  </div>
+
+</div>
+
+
+<div id="scene-bed" class="twelfth">
+
+  <div class="talk">
+    <div class="boy-word">
+      <p>原来，一切只是一场梦..对了，香包！为什么现代见不到香包…</p>
+    </div>
+    <div class="sleepy-boy">
+      <img src="../static/img/game_img/sleepy_boy.png" alt="">
+    </div>
+  </div>
+
+</div>
+
+
+<div id="scene-bed" class="thirteenth">
+
+  <div class="story">
+    <p>
+      做一个纯手工的香包不是一件简单的事，从选材到缝制，都是对手工艺人巨大的考验。
+      曾经，有一段时间一系列手工艺受到快餐文化消费的影响，没有人愿意花心花力做香包，它只是众多非
+      物质文化遗产的一个缩影，为此需要众多人的努力。现代香包作为传统文化的载体，在人际交往、
+      美化环境、陶冶情操、寄情寓志方面起着不可替代的作用。
+    </p>
+  </div>
+
+  <div class="talk">
+    <div class="boy-word">
+      <p>原来，香包如此珍贵而富有意义，传承香包非遗文化，从我做起！</p>
+    </div>
+    <div class="sleepy-boy">
+      <img src="../static/img/game_img/sleepy_boy.png" alt="">
+    </div>
+  </div>
+
+</div>
+
+
+<div id="make-xiangbao-scene" class="fourteenth" style="display: none;">
+
+  <div class="msg">
+    <p>现在，请你也尝试做一个属于自己的香包。用自己对于香包理解做出都属于自己的香包吧！</p>
+  </div>
+
+  <div class="xiangbao-container">
+    <div class="xiangbao">
+      <img src="../static/img/game_img/xiangbao_purple.png" alt="">
+    </div>
+    <div class="xiangbao">
+      <img src="../static/img/game_img/xiangbao_yellow.png" alt="">
+    </div>
+    <div class="xiangbao">
+      <img src="../static/img/game_img/xiangbao_orange.png" alt="">
+    </div>
+    <div class="xiangbao">
+      <img src="../static/img/game_img/xiangbao_blue.png" alt="">
+    </div>
+    <div class="xiangbao">
+      <img src="../static/img/game_img/xiangbao_green.png" alt="">
+    </div>
+  </div>
+
+</div>
+
+
+<div id="make-xiangbao-scene" class="fifteenth" style="display: none;">
+
+  <div class="flowers">
+    <div class="left">
+      <img src="../static/img/game_img/hua1.png" alt="">
+      <img src="../static/img/game_img/hua2.png" alt="">
+      <img src="../static/img/game_img/hua3.png" alt="">
+    </div>
+    <div class="right">
+      <img src="../static/img/game_img/hua4.png" alt="">
+      <img src="../static/img/game_img/hua5.png" alt="">
+      <img src="../static/img/game_img/hua6.png" alt="">
+    </div>
+  </div>
+
+</div>
+
+
+<div id="make-xiangbao-scene" class="sixteenth" style="display: none;">
+
+  <div class="bag-container">
+    <div class="bag">
+      <img src="../static/img/game_img/bag_brown.png" alt="">
+    </div>
+    <div class="bag">
+      <img src="../static/img/game_img/bag_yellow.png" alt="">
+    </div>
+    <div class="bag">
+      <img src="../static/img/game_img/bag_green.png" alt="">
+    </div>
+    <div class="bag">
+      <img src="../static/img/game_img/bag_sky.png" alt="">
+    </div>
+    <div class="bag">
+      <img src="../static/img/game_img/bag_blue.png" alt="">
+    </div>
+  </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/game.js') }}"></script>
 {% endblock %}
 
 {% block others %}
 <style>
 * {
-  margin: 0;
   padding: 0;
-  border: 0;
+  margin: 0;
   box-sizing: border-box;
 }
-
-/* 替换继承过来的属性，否则溢出无法生效 */
-.body-bg {
-  background-repeat: no-repeat; /*图片不重复*/
-  overflow: auto; /*溢出*/
-  background-attachment: fixed;
+/* 所有场景的背景设置 */
+#scene-building {
+  background-image: url("../static/img/game_img/first_scene_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  
+  position: relative;
 }
 
-.catalog {
+#scene-mountain {
+  background-image: url("../static/img/game_img/second_to_eleven_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+
+  position: relative;
+}
+
+#scene-bed {
+  background-image: url("../static/img/game_img/bed_scene_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+
+  position: relative;
+}
+
+#make-xiangbao-scene {
+  background-image: url("../static/img/game_img/make_xiangbao_bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+
+  position: relative;
+}
+
+
+
+/* ------------------------------第一个场景------------------------------ */
+/* 所有文字 */
+.first > .item p {
+  transition: box-shadow 0.3s ease;
+}
+
+.first > .item p:hover {
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* 香包 */
+#xiangbao {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-90%, -50%);
+}
+
+#xiangbao img {
+  width: 300px;
+  height: 300px;
+}
+
+#xiangbao #stuff-name {
+  margin-bottom: -80px;
+}
+
+#xiangbao #building-name {
+  margin-top: -60px;
+}
+
+/* 剪纸 */
+#jianzhi {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#jianzhi img {
+  width: 240px;
+  height: 180px;
+}
+
+/* 柳琴戏 */
+#liuqinxi {
+  position: absolute;
+  bottom: 35%;
+  right: 20%;
+}
+
+#liuqinxi img {
+  width: 300px;
+  height: 300px;
+}
+
+#liuqinxi #stuff-name {
+  margin-bottom: -60px;
+}
+
+#liuqinxi #building-name {
+  margin-top: -60px;
+}
+
+/* 一次性设置三个 */
+.item {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
 
-  height: 500px;
-  margin-top: 50px;
+  font-family: "LiSu", "STLiSu", "SimLiSu", "隶书", "Microsoft YaHei", sans-serif;
+  font-size: 32px;
+  text-shadow: 
+    -2px -2px 0 white,
+    -2px -2px 0 white,
+    -2px -2px 0 white,
+    -2px -2px 0 white;
 }
 
-.traditional {
-  border: 1px solid red;
-  border-radius: 10px;
-  background-color: antiquewhite;
-  width: 180px;
-  height: 320px;
+
+/* ------------------------------第二个场景------------------------------ */
+/* 香包的简介 */
+.second > #xiangbao-intro {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 40%;
+  height: 300px;
+
+  border-radius: 60px;
+  background-color: rgba(196, 194, 189, 0.6);
+  font-family: "LiSu", "STLiSu", "SimLiSu", "隶书", "Microsoft YaHei", sans-serif;
+  font-size: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.second > #xiangbao-intro p {
+  padding: 0 24px;
+  margin: 0;
+}
+
+/* 女孩 图片和话语 */
+.second > #girl {
+  position: absolute;
+  bottom: 60px;
+  left: 45%;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  gap: 20px;
 }
 
-.traditional a {
-  font-style: italic;
+.second > #girl #girl-word {
+  width: 260px;
+  height: 100px;
+
+  font-family: "LiSu", "STLiSu", "SimLiSu", "隶书", "Microsoft YaHei", sans-serif;
   font-size: 20px;
 
-  margin-bottom: 20px;
+  background-color: rgba(196, 194, 189, 0.6);
+  border: 2px solid white;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.traditional img {
-  width: 140px;
-  height: 220px;
+.second > #girl #girl-word p {
+  margin: 0;
+  padding: 0;
 
+  text-align: center;
+  width: 200px;
+}
+
+.second > #girl .cute-girl {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+
+  display: flex;
+  align-items: flex-end;
+}
+
+.second > #girl .cute-girl img {
+  animation: cute 1s steps(5) infinite;
+}
+@keyframes cute {
+  0% {}
+  100% {
+    transform: translateX(-1000px);
+  }
+}
+
+
+/* ------------------------------第三个场景------------------------------ */
+.third > #scholar-boy {
+  position: absolute;
+  bottom: 60px;
+  left: 45%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.third > #scholar-boy #scholar-boy-word {
+  width: 300px;
+  height: 160px;
+
+  font-family: "LiSu", "STLiSu", "SimLiSu", "隶书", "Microsoft YaHei", sans-serif;
+  font-size: 20px;
+
+  background-color: rgba(196, 194, 189, 0.6);
+  border: 2px solid white;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.third > #scholar-boy #scholar-boy-word p {
+  margin: 0;
+  padding: 0px;
+
+  text-align: center;
+  width: 200px;
+}
+
+.third > #scholar-boy .handsome-boy {
+  width: 152px;
+  height: 240px;
+  overflow: hidden;
+}
+
+.third > #scholar-boy .handsome-boy img {
+  animation: handsome 1s steps(5) infinite;
+}
+@keyframes handsome {
+  0% {}
+  100% {
+    transform: translateX(-760px);
+  }
+}
+
+
+/* ------------------------------第四个场景------------------------------ */
+/* 老人 */
+.fourth > #old-man {
+  position: absolute;
+  bottom: 30px;
+  left: 20%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.fourth > #old-man #old-man-word {
+  width: 260px;
+  height: 100px;
+
+  font-family: "LiSu", "STLiSu", "SimLiSu", "隶书", "Microsoft YaHei", sans-serif;
+  font-size: 20px;
+
+  background-color: rgba(196, 194, 189, 0.6);
+  border: 2px solid white;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fourth > #old-man #old-man-word p {
+  margin: 0;
+  padding: 0;
+
+  text-align: center;
+  width: 220px;
+}
+
+.fourth > #old-man img {
+  height: 400px;
+}
+
+/* 女孩 图片和话语 */
+.fourth > #girl {
+  position: absolute;
+  bottom: 60px;
+  left: 45%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.fourth > #girl #girl-word {
+  width: 300px;
+  height: 120px;
+
+  font-family: "LiSu", "STLiSu", "SimLiSu", "隶书", "Microsoft YaHei", sans-serif;
+  font-size: 20px;
+
+  background-color: rgba(196, 194, 189, 0.6);
+  border: 2px solid white;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fourth > #girl #girl-word p {
+  margin: 0;
+  padding: 0;
+
+  text-align: center;
+  width: 200px;
+}
+
+.fourth > #girl .cute-girl {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+
+  display: flex;
+  align-items: flex-end;
+}
+
+.fourth > #girl .cute-girl img {
+  animation: cute 1s steps(5) infinite;
+}
+@keyframes cute {
+  0% {}
+  100% {
+    transform: translateX(-1000px);
+  }
+}
+
+
+/* ------------------------------第五个场景------------------------------ */
+.fifth > #title {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+
+  width: 240px;
+  height: 70px;
+
+  background-color: rgba(220, 227, 237, 0.8);
+  border: 1px solid black;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  font-size: 32px;
+  font-weight: 800;
+  color: rgb(255, 201, 35);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fifth > #title p {
+  margin: 0;
+  padding: 0;
+
+  text-align: center;
+}
+
+
+
+.fifth > #q-and-a {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+}
+
+.fifth > #q-and-a #q {
+  width: 60%;
+  height: 40%;
+  font-size: 40px;
+  font-weight: 400;
+
+  background-color: rgba(224, 230, 237, 0.8);
+  border: 6px solid rgb(132, 151, 176);
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fifth > #q-and-a #q p {
+  text-align: center;
+}
+
+.fifth > #q-and-a #a {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.fifth > #q-and-a #a #option {
+  width: 200px;
+  height: 80px;
+  font-size: 20px;
+  font-weight: 400;
+
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: rgba(199, 205, 216, 0.8);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.fifth > #q-and-a #a #option:hover {
+  background-color: rgba(124, 128, 134, 0.8);
+}
+
+.fifth > #q-and-a #a #option p {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/* ------------------------------第六个场景------------------------------ */
+.sixth > #story {
+  position: absolute;
+  top: 20px;
+  left: 10%;
+  right: 10%;
+}
+
+.sixth > #story .story-title {
+  font-size: 24px;
+  color: rgb(102, 102, 102);
+}
+
+.sixth > #story .story-content {
+  font-size: 24px;
+  font-family: "LiSu", "STLiSu", "SimLiSu", "隶书", "Microsoft YaHei", sans-serif;
+}
+
+
+/* 老人 */
+.sixth > #old-man {
+  position: absolute;
+  bottom: 10px;
+  left: 20%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.sixth > #old-man #old-man-word {
+  width: 360px;
+  height: 180px;
+  margin-bottom: -80px;
+
+  font-family: "LiSu", "STLiSu", "SimLiSu", "隶书", "Microsoft YaHei", sans-serif;
+  font-size: 20px;
+
+  background-color: rgba(196, 194, 189, 0.6);
+  border: 2px solid white;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sixth > #old-man #old-man-word p {
+  margin: 0;
+  padding: 0;
+
+  text-align: center;
+  width: 250px;
+}
+
+.sixth > #old-man img {
+  height: 400px;
+}
+
+/* 女孩 图片和话语 */
+.sixth > #girl {
+  position: absolute;
+  bottom: 60px;
+  left: 45%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.sixth > #girl #girl-word {
+  width: 240px;
+  height: 140px;
+
+  font-family: "LiSu", "STLiSu", "SimLiSu", "隶书", "Microsoft YaHei", sans-serif;
+  font-size: 20px;
+
+  background-color: rgba(196, 194, 189, 0.6);
+  border: 2px solid white;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sixth > #girl #girl-word p {
+  margin: 0;
+  padding: 0;
+
+  text-align: center;
+  width: 200px;
+}
+
+.sixth > #girl .cute-girl {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+
+  display: flex;
+  align-items: flex-end;
+}
+
+.sixth > #girl .cute-girl img {
+  animation: cute 1s steps(5) infinite;
+}
+@keyframes cute {
+  0% {}
+  100% {
+    transform: translateX(-1000px);
+  }
+}
+
+
+
+/* ------------------------------第七个场景------------------------------ */
+.seventh > #title {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+
+  width: 240px;
+  height: 70px;
+
+  background-color: rgba(220, 227, 237, 0.8);
+  border: 1px solid black;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  font-size: 32px;
+  font-weight: 800;
+  color: rgb(255, 201, 35);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.seventh > #title p {
+  text-align: center;
+
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.seventh > #q-and-a {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+}
+
+.seventh > #q-and-a #q {
+  width: 60%;
+  height: 40%;
+  font-size: 40px;
+  font-weight: 400;
+
+  background-color: rgba(224, 230, 237, 0.8);
+  border: 6px solid rgb(132, 151, 176);
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.seventh > #q-and-a #q p {
+  margin-bottom: 0;
+  padding: 0;
+
+  text-align: center;
+}
+
+.seventh > #q-and-a #a {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.seventh > #q-and-a #a #option {
+  width: 200px;
+  height: 80px;
+  font-size: 20px;
+  font-weight: 400;
+
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: rgba(199, 205, 216, 0.8);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.seventh > #q-and-a #a #option:hover {
+  background-color: rgba(124, 128, 134, 0.8);
+}
+
+.seventh > #q-and-a #a #option p {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ------------------------------第八个场景------------------------------ */
+.eighth > #xiangbao-image {
+  position: absolute;
+  top: 40px;
+  left: 60px;
+
+  background-image: url("../static/img/game_img/xiangbao.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  width: 40%;
+  height: 60%;
+}
+
+.eighth > #xiangbao-intro {
+  position: absolute;
+  bottom: 10%;
+  right: 80px;
+
+  border: 6px solid rgb(132, 151, 176);
+  border-radius: 50%;
+  background-color: rgba(198, 204, 215, 0.8);
+
+  width: 800px;
+  height: 500px;
+  font-size: 24px;
+  font-family: "LiSu", "STLiSu", "SimLiSu", "隶书", "Microsoft YaHei", sans-serif;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.eighth > #xiangbao-intro p {
+  margin: 0;
+  padding: 0;
+
+  text-align: center;
+  width: 600px;
+  height: 450px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/* ------------------------------第九个场景------------------------------ */
+/* 老人 */
+.ninth > #old-man {
+  position: absolute;
+  bottom: 60px;
+  left: 10%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.ninth > #old-man #old-man-word {
+  width: 260px;
+  height: 100px;
+
+  font-family: "LiSu", "STLiSu", "SimLiSu", "隶书", "Microsoft YaHei", sans-serif;
+  font-size: 20px;
+
+  background-color: rgba(196, 194, 189, 0.6);
+  border: 2px solid white;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ninth > #old-man #old-man-word p {
+  text-align: center;
+
+  margin: 0;
+  padding: 0;
+}
+
+.ninth > #old-man img {
+  height: 400px;
+}
+
+/* 女孩 图片和话语 */
+.ninth > #girl {
+  position: absolute;
+  bottom: 60px;
+  right: 30%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  cursor: pointer;
+}
+
+.walk-closer {
+  transform: translateX(-70px);
+  transition: transform 1s ease;
+}
+
+.ninth > #girl #girl-word {
+  width: 260px;
+  height: 100px;
+
+  font-family: "LiSu", "STLiSu", "SimLiSu", "隶书", "Microsoft YaHei", sans-serif;
+  font-size: 20px;
+
+  background-color: rgba(196, 194, 189, 0.6);
+  border: 2px solid white;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ninth > #girl #girl-word p {
+  text-align: center;
+
+  margin: 0;
+  padding: 0;
+}
+
+.ninth > #girl .cute-girl {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+
+  display: flex;
+  align-items: flex-end;
+}
+
+.ninth > #girl .cute-girl img {
+  animation: cute 1s steps(5) infinite;
+}
+@keyframes cute {
+  0% {}
+  100% {
+    transform: translateX(-1000px);
+  }
+}
+
+
+/* 男孩 */
+.ninth > #scholar-boy {
+  position: absolute;
+  bottom: 60px;
+  left: 40%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.ninth > #scholar-boy #scholar-boy-word {
+  width: 260px;
+  height: 130px;
+
+  font-family: "LiSu", "STLiSu", "SimLiSu", "隶书", "Microsoft YaHei", sans-serif;
+  font-size: 20px;
+
+  background-color: rgba(196, 194, 189, 0.6);
+  border: 2px solid white;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ninth > #scholar-boy #scholar-boy-word p {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.ninth > #scholar-boy .handsome-boy {
+  width: 152px;
+  height: 240px;
+  overflow: hidden;
+}
+
+.ninth > #scholar-boy .handsome-boy img {
+  animation: handsome 1s steps(5) infinite;
+}
+@keyframes handsome {
+  0% {}
+  100% {
+    transform: translateX(-760px);
+  }
+}
+
+
+/* ------------------------------第十个场景------------------------------ */
+/* 老人 */
+.tenth > #old-man {
+  position: absolute;
+  bottom: 60px;
+  left: 10%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.tenth > #old-man #old-man-word {
+  width: 260px;
+  height: 100px;
+
+  font-family: "LiSu", "STLiSu", "SimLiSu", "隶书", "Microsoft YaHei", sans-serif;
+  font-size: 20px;
+
+  background-color: rgba(196, 194, 189, 0.6);
+  border: 2px solid white;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tenth > #old-man #old-man-word p {
+  text-align: center;
+
+  margin: 0;
+  padding: 0;
+}
+
+.tenth > #old-man img {
+  height: 400px;
+}
+
+/* 女孩 图片和话语 */
+.tenth > #girl {
+  position: absolute;
+  bottom: 60px;
+  right: 35%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.tenth > #girl #girl-word {
+  width: 260px;
+  height: 100px;
+
+  font-family: "LiSu", "STLiSu", "SimLiSu", "隶书", "Microsoft YaHei", sans-serif;
+  font-size: 20px;
+
+  background-color: rgba(196, 194, 189, 0.6);
+  border: 2px solid white;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tenth > #girl #girl-word p {
+  text-align: center;
+
+  margin: 0;
+  padding: 0;
+}
+
+.tenth > #girl .cute-girl {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+
+  display: flex;
+  align-items: flex-end;
+}
+
+.tenth > #girl .cute-girl img {
+  animation: cute 1s steps(5) infinite;
+}
+@keyframes cute {
+  0% {}
+  100% {
+    transform: translateX(-1000px);
+  }
+}
+
+
+/* 男孩 */
+.tenth > #scholar-boy {
+  position: absolute;
+  bottom: 60px;
+  left: 43%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.tenth > #scholar-boy #scholar-boy-word {
+  width: 260px;
+  height: 130px;
+
+  font-family: "LiSu", "STLiSu", "SimLiSu", "隶书", "Microsoft YaHei", sans-serif;
+  font-size: 20px;
+
+  background-color: rgba(196, 194, 189, 0.6);
+  border: 2px solid white;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tenth > #scholar-boy #scholar-boy-word p {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.tenth > #scholar-boy .handsome-boy {
+  width: 152px;
+  height: 240px;
+  overflow: hidden;
+}
+
+.tenth > #scholar-boy .handsome-boy img {
+  animation: handsome 1s steps(5) infinite;
+}
+@keyframes handsome {
+  0% {}
+  100% {
+    transform: translateX(-760px);
+  }
+}
+
+
+/* ------------------------------第十一个场景------------------------------ */
+.eleventh > #title {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+
+  width: 240px;
+  height: 70px;
+
+  background-color: rgba(220, 227, 237, 0.8);
+  border: 1px solid black;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  font-size: 32px;
+  font-weight: 800;
+  color: rgb(255, 201, 35);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.eleventh > #title img {
+  width: 600px;
+
+  margin: 360px 0 0 330px;
+}
+
+
+
+.eleventh > #q-and-a {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+}
+
+.eleventh > #q-and-a #q {
+  width: 40%;
+  height: 40%;
+  margin-left: 400px;
+  font-size: 40px;
+  font-weight: 400;
+
+  background-color: rgba(224, 230, 237, 0.8);
+  border: 6px solid rgb(132, 151, 176);
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.eleventh > #q-and-a #q p {
+  text-align: center;
+}
+
+.eleventh > #q-and-a #a {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.eleventh > #q-and-a #a #option {
+  width: 200px;
+  height: 80px;
+  font-size: 20px;
+  font-weight: 400;
+
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: rgba(199, 205, 216, 0.8);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.eleventh > #q-and-a #a #option:hover {
+  background-color: rgba(124, 128, 134, 0.8);
+}
+
+.eleventh > #q-and-a #a #option p {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ------------------------------第十二个场景------------------------------ */
+.twelfth > .talk {
+  width: 400px;
+  height: 500px;
+
+  position: absolute;
+  bottom: 2%;
+  right: 32%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.twelfth > .talk .boy-word {
+  font-family: "LiSu", "STLiSu", "SimLiSu", "隶书", "Microsoft YaHei", sans-serif;
+  font-size: 20px;
+
+  width: 240px;
+  height: 140px;
+  border: 2px solid white;
+  border-radius: 50%;
+  background-color: rgba(139, 153, 173, 0.6);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.twelfth > .talk .boy-word p {
+  width: 200px;
+  height: 100px;
+
+  text-align: center;
+  margin: 0;
   margin-top: 20px;
 }
 
+.twelfth > .talk .sleepy-boy {
+  width: 400px;
+  height: 300px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+/* 动画 */
+.rotate-and-move {
+  transform: rotate(-45deg) translate(230px, 420px);
+  transition: transform 4s;
+}
+
+
+/* ------------------------------第十三个场景------------------------------ */
+.thirteenth > .story {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+
+  border: 1px solid white;
+  border-radius: 30px;
+  background-color: rgba(197, 198, 192, 0.6);
+  font-family: "LiSu", "STLiSu", "SimLiSu", "隶书", "Microsoft YaHei", sans-serif;
+  font-size: 24px;
+
+  width: 500px;
+  height: 340px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.thirteenth > .story p {
+  width: 480px;
+  height: 240px;
+
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0;
+}
+
+
+.thirteenth > .talk {
+  width: 400px;
+  height: 500px;
+
+  position: absolute;
+  bottom: 0;
+  right: 6%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.thirteenth > .talk .boy-word {
+  font-family: "LiSu", "STLiSu", "SimLiSu", "隶书", "Microsoft YaHei", sans-serif;
+  font-size: 20px;
+
+  width: 240px;
+  height: 140px;
+  border: 2px solid white;
+  border-radius: 50%;
+  background-color: rgba(139, 153, 173, 0.6);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.thirteenth > .talk .boy-word p {
+  width: 200px;
+  height: 100px;
+
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  margin-top: 20px;
+}
+
+.thirteenth > .talk .sleepy-boy {
+  width: 400px;
+  height: 300px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.thirteenth > .talk .sleepy-boy img {
+  transform: rotate(-45deg);
+}
+
+
+
+/* ------------------------------第十四个场景------------------------------ */
+.fourteenth > .msg {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+
+  border: 2px solid white;
+  border-radius: 20px;
+  background-color: rgba(181, 177, 174, 0.8);
+  font-family: "LiSu", "STLiSu", "SimLiSu", "隶书", "Microsoft YaHei", sans-serif;
+  font-size: 28px;
+
+  width: 400px;
+  height: 180px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fourteenth > .msg p {
+  padding: 60px 40px;
+  margin: 0;
+}
+
+
+.fourteenth > .xiangbao-container {
+  position: absolute;
+  top: 50%;
+  right: 20%;
+  transform: translateY(-50%);
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 500px;
+  height: 300px;
+}
+
+.fourteenth > .xiangbao-container .xiangbao {
+  width: 150px;
+  height: 150px;
+}
+.fourteenth > .xiangbao-container .xiangbao img {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+/* ------------------------------第十五个场景------------------------------ */
+.fifteenth > .flowers {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 800px;
+  height: 400px;
+}
+
+.fifteenth > .flowers .left {
+  width: 50%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.fifteenth > .flowers .right {
+  width: 50%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.fifteenth > .flowers img {
+  width: 180px;
+  height: 140px;
+}
+
+
+
+/* ------------------------------第十六个场景------------------------------ */
+.sixteenth > .bag-container {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 500px;
+  height: 600px;
+}
+
+.sixteenth > .bag-container .bag {
+  width: 150px;
+  height: 200px;
+
+  cursor: pointer;
+}
+.sixteenth > .bag-container .bag img {
+  width: 100%;
+  height: 100%;
+}
 </style>
 {% endblock %}
