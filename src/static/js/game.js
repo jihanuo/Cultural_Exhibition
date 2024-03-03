@@ -61,7 +61,9 @@ function checkAnswer(clickedElements) {
       if (option.classList.contains("correct")) {
         const tick = document.createElement("span");
         tick.textContent = "√";
-        tick.style.color = "red";
+        tick.style.color = "green";
+        tick.style.fontSize = "36px";
+        tick.style.fontWeight = "700";
         option.appendChild(tick);
         // 1秒后切换场景
         setTimeout(function () {
@@ -69,7 +71,16 @@ function checkAnswer(clickedElements) {
           currentSceneIndex++;
         }, 1000);
       } else {
-        alert("选择错误");
+        const tick = document.createElement("span");
+        tick.textContent = "×";
+        tick.style.color = "red";
+        tick.style.fontSize = "36px";
+        tick.style.fontWeight = "700";
+        option.appendChild(tick);
+        // 1秒后清除叉叉
+        setTimeout(function () {
+          option.removeChild(tick);
+        }, 600);
       }
     });
   });
