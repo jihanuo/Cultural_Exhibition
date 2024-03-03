@@ -13,10 +13,7 @@ const scenes = [
   {element: document.querySelector(".tenth")},
   {element: document.querySelector(".eleventh")},
   {element: document.querySelector(".twelfth")},
-  {element: document.querySelector(".thirteenth")},
-  {element: document.querySelector(".fourteenth")},
-  {element: document.querySelector(".fifteenth")},
-  {element: document.querySelector(".sixteenth")}
+  {element: document.querySelector(".thirteenth")}
 ];
 // 将除第一个外的所有场景隐藏
 for (let i = 1; i < scenes.length; i++) {
