@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% block title %}游戏{% endblock %}
 {% block main %}
+<audio class="bg-music" autoplay loop volume="0.2">
+  <source src="../static/bg_music.mp3" type="audio/mp3">
+</audio>
 
 <div id="scene-building" class="first" style="display: block;">
 
@@ -23,8 +26,6 @@
   </div>
 
 </div>
-
-
 <div id="scene-mountain" class="second" style="display: none;">
 
   <div id="xiangbao-intro">
@@ -286,6 +287,7 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 /* 所有场景的背景设置 */
 #scene-building {
   background-image: url("../static/img/game_img/first_scene_bg.jpg");
