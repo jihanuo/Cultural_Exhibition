@@ -136,3 +136,5 @@ dmypy.json
 *.pyc
 src/views/__pycache__/index.cpython-310.pyc
 .idea\
+data/tokens
+data/users
